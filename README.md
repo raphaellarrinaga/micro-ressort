@@ -2,7 +2,7 @@
 
 Static website.
 
-The is currently an initiative to move the content of the first brochure of the non-profit association micro-ressort into a simple website.
+This is currently an initiative to move the content of the first brochure of the non-profit association micro-ressort into a simple website.
 
 micro-ressort is dedicated to help administratively and provide loans to disadvantaged people to allow them to reach their life goals (studies, jobs…).
 
