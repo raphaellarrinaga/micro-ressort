@@ -1,12 +1,19 @@
-# micro-ressort
+# Micro-ressort
 
-Static website.
+Static website deployed with Hugo.
 
-This is currently an initiative to move the content of the first brochure of the non-profit association micro-ressort into a simple website.
+Micro-ressort is dedicated to help administratively and provide loans to disadvantaged people to allow them to reach their life goals (studies, jobs…).
 
-micro-ressort is dedicated to help administratively and provide loans to disadvantaged people to allow them to reach their life goals (studies, jobs…).
+## Useful commands
+
+- `hugo -D --minify`
+- `hugo --theme=ananke --buildDrafts --minify`
+- `hugo --theme=accessible-minimalism --buildDrafts --minify`
+- `hugo server -D`
+- `hugo new posts/my-post.md`
+- Theme: https://github.com/leonstafford/accessible-minimalism-hugo-theme
+- SASS: https://roneo.org/hugo-sass-theme-beautifullhugo/
 
 ## Roadmap
 
-- set build tasks to minify, compress files etc. (not set to avoid complexity if another person join the project).
-- if build tasks are defined, set the github page source on another branch than master.
+- @todo

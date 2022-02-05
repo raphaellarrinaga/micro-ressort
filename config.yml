@@ -1,0 +1,17 @@
+baseURL: 'https://micro-ressort.be/'
+languageCode: 'fr'
+title: 'Micro-ressort'
+theme: "accessible-minimalism"
+relativeURLS: true
+params:
+  google_fonts:
+  - [
+    Dosis,
+    "400, 700"
+  ]
+  - [
+    Roboto,
+    "400, 400i, 700, 700i"
+  ]
+  heading_font: "Fira Code"
+  body_font: "Open Sans"
