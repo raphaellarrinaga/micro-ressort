@@ -1,0 +1,105 @@
+// @todo
+// css static loading
+// netlify push test
+
+// sass media query helper
+// sass font size config
+// sass grid config
+// sass homepage hero (navigation exception)
+// check sass compilation, minify, etc.
+
+// Email obfuscate
+// (split pages templates)
+// (move content from templates in .md files)
+
+.site-container {
+  overflow: hidden;
+}
+
+.site-header {
+  padding: 1rem 0;
+}
+
+.site-header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header__title {
+  margin: 0;
+
+  a {
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.site-navigation {
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0 -1rem;
+  }
+
+  li {
+    padding: 0 1rem;
+  }
+
+  a {
+    color: $text-color;
+  }
+}
+
+.site-footer {
+  border-top: 2px solid $border;
+  padding: 1.5rem 0 1rem;
+  position: relative;
+
+  &:before {
+    @include el(inline-block, 212px, 33px);
+    background: url("/images/footer-border.svg") top left;
+    position: absolute;
+    top: -17px;
+    left: calc((100vw - #{$max-width})/2);
+    transform: rotate(180deg);
+  }
+
+  &:after {
+    @include el(inline-block, 212px, 33px);
+    background: url("/images/footer-border.svg") top left;
+    position: absolute;
+    top: -18px;
+    right: calc((100vw - #{$max-width})/2);
+  }
+}
+
+.site-footer__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero--homepage {
+  background-color: $blue;
+  color: $white;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  position: relative;
+
+  @include section-curve($blue);
+
+  h1, h2, p {
+    color: $white;
+  }
+}
+
+.page-header {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.page-title {
+  font-size: 3rem;
+}

@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+{{- $url_about := "/a-propos" -}}
+{{- $url_gift := "/faire-un-don" -}}
+{{- $url_help := "/demander-un-soutien" -}}
+
+<main>
+  <header class="l-constrain">
+    <h1>Faire un don</h1>
+    <p>L’association de fait « Micro-Ressort » a été constituée par acte sous seing privé en date du 3/05/2019, en vue d’accorder un soutien financier et/ou social à des porteurs de projet. <br>
+    A ce titre, elle cherche des ressources financières en vue de lui permettre d’accorder ceux-ci.</p>
+  </header>
+  <section class="site-section">
+    <div class="l-constrain">
+      <h1>Comment se déroule une donation</h1>
+      <ul>
+        <li>Si le projet est clair pour vous et vous motive versez un don sur le compte BE76 0689 3550 3995</li>
+        <li>Si vous désirez en savoir plus avant d’investir, envoyez un mail à <a href="href:microressort@gmail.com">microressort@gmail.com</a> avec votre n° d’appel nous prendrons rapidement contact avec vous pour répondre à vos questions.</li>
+      </ul>
+      <p>Quels avantages avez-vous à donner ?</p>
+      <ul>
+        <li>Vous soutienez une association totalement indépendante de l’Etat</li>
+        <li>Votre investissement aura un grand retour social</li>
+        <li>Un rapport annuel vous sera envoyé sur l’évolution des projets en cours</li>
+        <li>Vous pouvez également devenir accompagnateur.trice</li>
+        <li>Micro-ressort garantit l’utilisation à 100% de votre don en appui pour les porteurs.teuses de projet</li>
+        <li>Enfin, vous devenez membre de droit de l’assemblée générale et recevrez une invitation pour y participer.</li>
+      </ul>
+      <p>Recevrez-vous une attestation fiscale ?</p>
+      <ul>
+        <li>Hélas non ! Ce genre de projet n’ai pas reconnu par l’Etat et donc pas d’attestation possible</li>
+        <li>Pour les sociétés, ce n’est également pas déductible.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="site-section">
+    <div class="l-constrain">
+      <h1>Soutenir l’association</h1>
+      <p>Envoyer un mail à microressort@gmail.com</p>
+    </div>
+  </section>
+  <section class="site-section">
+    <div class="l-constrain">
+      <h1>Vous pouvez participer sans financement</h1>
+      <p>Pour accompagner une personne en difficulté et vous investir avec notre équipe.</p>
+      <p><a class="button" href="{{ $url_about }}">Rejoindre l'équipe</a></p>
+    </div>
+  </section>
+  {{ .Content }}
+</main>
+
+{{ end }}

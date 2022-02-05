@@ -1,0 +1,3 @@
+{{ $template := resources.Get "scss/styles.scss" }}
+{{ $style := $template | resources.ExecuteAsTemplate "style.scss" . | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">

@@ -1,0 +1,173 @@
+//
+// Mixins
+//
+// Snippets of reusable CSS to develop faster and keep code readable
+//
+
+// Use drupal hidden module classes to hide text
+// .hidden, .visually-hidden, .visually-hidden.focusable, .invisible
+// @see https://www.drupal.org/node/2022859
+
+// Triangle
+@mixin triangle($color: green, $orientation: top, $width: 10px, $height: 5px) {
+  border-style: solid;
+  height: 0;
+  width: 0;
+
+  @if $orientation == 'left' {
+    border-color: transparent $color transparent transparent;
+    border-width: $width/2 $height $width/2 0;
+  }
+  @else if $orientation == 'right' {
+    border-color: transparent transparent transparent $color;
+    border-width: $width/2 0 $width/2 $height;
+  }
+  @else if $orientation == 'top' {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 $width/2 $height $width/2;
+  }
+  @else {
+    border-color: $color transparent transparent transparent;
+    border-width: $height $width/2 0 $width/2;
+  }
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Pseudo element
+// Create an empty css pseudo element. Reusable for, e.g., icons
+@mixin el($display, $width, $height) {
+  content: '';
+  display: $display;
+
+  @if $height {
+    height: $height;
+  }
+  @if $width {
+    width: $width;
+  }
+}
+
+// No child margin
+// Keep vrhthm consistent avoiding children margins
+// $direction : top or bottom. Default: bottom
+@mixin no-child-margin($direction : "bottom") {
+  $child : "last";
+
+  @if $direction == "top" {
+    $child : "first";
+  }
+
+  &>*:#{$child}-child {
+    margin-#{$direction}: 0;
+
+    &>*:#{$child}-child {
+      margin-#{$direction}: 0;
+
+      &>*:#{$child}-child {
+        margin-#{$direction}: 0;
+      }
+    }
+  }
+}
+
+// Buttons helpers
+//
+
+// Define simple button styles
+@mixin button($font-size: 1rem) {
+  appearance: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $button-font-family;
+  font-size: $font-size;
+  font-weight: bold;
+  line-height: 1;
+  // padding: rem(7px) $font-size rem(8px);
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+
+  // &:active {
+  // }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+@mixin button--default($font-size: 1rem) {
+  @include button($font-size);
+  background-color: $button-bg-color;
+  border: 2px solid darken($button-bg-color, 8%);
+  color: $button-text-color;
+  border-radius: 2rem;
+
+  &:visited {
+    color: $button-text-color;
+  }
+
+  &:hover {
+    background-color: darken($button-bg-color, 8%);
+    color: $button-text-color;
+  }
+
+  &:focus{
+    box-shadow: lighten($link-color, 15%) 0 0 5px;
+    color: $button-text-color;
+    outline: 0;
+  }
+}
+
+@mixin section-bg() {
+  &:before {
+    background-color: $page-color;
+    content: "";
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+@mixin section-curve($bg-color: $page-color) {
+  &:after {
+    background-color: $bg-color;
+    content: "";
+    bottom: -30px;
+    display: block;
+    height: 60px;
+    left: -85px;
+    position: absolute;
+    width: calc(100% + 170px);
+    border-radius: 50%;
+    z-index: 0;
+  }
+}
+
+@mixin section-bg-color($bg: $page-color, $text: $text-color) {
+  background-color: $bg;
+
+  @if $text {
+    color: $text;
+
+    p,
+    h1, h2, h3, h4, h5 {
+      color: $text;
+    }
+  }
+}

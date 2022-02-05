@@ -1,0 +1,19 @@
+<header class="site-header {{if .IsHome}}is-home{{else}}is-not-home{{end}}">
+  <div class="l-constrain">
+    <div class="site-header__menu">
+      <h1 class="site-header__title">
+        <a href="/">
+          <span class="sr-only">{{ .Site.Title }}</span>
+          {{ readFile "themes/micro-ressort/images/logo.svg" | safeHTML }}
+        </a>
+      </h1>
+      <nav class="site-navigation">
+        <ul>
+          {{ range .Site.Menus.mainmenu }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

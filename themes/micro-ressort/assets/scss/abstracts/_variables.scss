@@ -1,0 +1,46 @@
+//
+//  Variables
+//
+
+// Colors
+//
+
+// Grays
+$white: #fefefe;
+$gray: #E3E3E3;
+$lightgray: #FAF8F5;
+$black: #222;
+
+// Branding
+$orange: #F3722C;
+$blue: #2D5276;
+$yellow: #F9C74F;
+$green: #2D7633;
+$lightgreen: #43AA8B;
+$purple: #884EBA;
+
+// Global colors
+$page-color: $white;
+$text-color: $black;
+$link-color: $orange;
+$border: $gray;
+
+// Fonts
+//
+$font-heading: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-body: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Buttons global vars
+//
+$button-bg-color: $orange;
+$button-text-color: $white;
+$button-font-family: $font-body;
+
+// Easing
+// @see usage https://gist.github.com/bendc/ac03faac0bf2aee25b49e5fd260a727d
+//
+$ease-in-cubic: cubic-bezier(.550, .055, .675, .19);
+$ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+
+// Grid
+$max-width: 1180px;

@@ -1,7 +1,7 @@
 baseURL: 'https://micro-ressort.be/'
 languageCode: 'fr'
 title: 'Micro-ressort'
-theme: "accessible-minimalism"
+theme: "micro-ressort"
 relativeURLS: true
 params:
   google_fonts:

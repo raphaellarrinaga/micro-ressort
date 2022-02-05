@@ -1,0 +1,258 @@
+//
+// Default styling of html elements.
+//
+
+// :root {
+//   font-size: 20px;
+//   line-height: 1.5;
+// }
+
+*, *:before, *:after {
+  // Universal transitions
+  transition-property:
+    background-color,
+    border-color,
+    box-shadow,
+    color,
+    opacity,
+    text-shadow,
+    transform;
+  transition-duration: .2s;
+  transition-timing-function: $ease-in-cubic;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  // Affect global rem unit calculation
+  // font-size: $px-base-font-size-mobile;
+  // line-height: $base-line-height;
+
+  // @include mappy-query(b-small) {
+  //   font-size: $px-base-font-size;
+  // }
+}
+
+body {
+  // @include font-feature-settings("kern", "liga", "pnum");
+  // @include prefixer(font-smoothing, antialiased, webkit);
+  background: $page-color;
+  color: $text-color;
+  font-family: $font-body;
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  p {
+    margin-top: 0;
+  }
+}
+
+// Headings
+//
+
+%hN {
+  // color: $heading-text-color;
+  font-family: $font-heading;
+  // line-height: $heading-line-height;
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %hN;
+}
+
+// h1 {
+//   @extend %hN;
+//   font-size: $font-size-xxl;
+//   margin: rhythm(1, $font-size-xxl, $heading-line-height) 0 rhythm(1/2, $font-size-xxl, $heading-line-height);
+// }
+
+// h2 {
+//   @extend %hN;
+//   font-size: $font-size-xl;
+//   margin: rhythm(1, $font-size-xl, $heading-line-height) 0 rhythm(1/2, $font-size-xl, $heading-line-height);
+// }
+
+// h3 {
+//   @extend %hN;
+//   font-size: $font-size-lg;
+//   margin: rhythm(1, $font-size-lg, $heading-line-height) 0 rhythm(1/2, $font-size-lg, $heading-line-height);
+// }
+
+// h4 {
+//   @extend %hN;
+//   font-size: $font-size-normal;
+//   line-height: $heading-line-height;
+//   margin: rhythm(1, $font-size-normal, $heading-line-height) 0 rhythm(1/2, $font-size-normal, $heading-line-height);
+// }
+
+// h5 {
+//   @extend %hN;
+//   font-size: $font-size-md;
+//   margin: rhythm(1, $font-size-md, $heading-line-height) 0 rhythm(1/2, $font-size-md, $heading-line-height);
+// }
+
+// h6 {
+//   @extend %hN;
+//   font-size: $font-size-sm;
+//   margin: rhythm(1, $font-size-sm, $heading-line-height) 0 rhythm(1/2, $font-size-sm, $heading-line-height);
+// }
+
+a {
+  background: linear-gradient(to top, $link-color 80%, $link-color 100%) no-repeat;
+  background-size: 0 1px;
+  background-position: 0 100%;
+  color: $link-color;
+  text-decoration: none;
+  transition: all .6s cubic-bezier(0.19,1,0.22,1);
+
+  &:focus,
+  &:hover {
+    background-size: 100% 1px;
+    color: $link-color;
+    outline: none;
+    text-decoration: none;
+  }
+  // &:visited {
+  //   color: $link-visited-color;
+  // }
+}
+
+abbr {
+  font-variant: small-caps;
+
+  &:hover {
+    cursor: help;
+  }
+}
+
+blockquote {
+  // color: $secondary-text-color;
+  // border-left: 3px solid $border-color;
+  // font-style: italic;
+  // font-size: $font-size-lg;
+  // margin: 0 0 rhythm(1, $font-size-md) rem(16);
+  // padding-left: rem(16);
+}
+
+// figcaption {
+//   color: lighten($primary-text-color, 10%);
+//   font-style: italic;
+// }
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
+ol {
+  // margin: 0 0 rhythm(1);
+  // padding: 0 0 0 rem(20);
+
+  ol,
+  ul {
+    margin: 0;
+  }
+}
+
+// p {
+//   margin: rhythm(1) 0;
+// }
+
+// small {
+//   font-size: $font-size-md;
+// }
+
+ul {
+  // margin: 0 0 rhythm(1);
+  // padding: 0 0 0 rem(20);
+  list-style: none;
+  padding: 0;
+
+  ol,
+  ul {
+    margin: 0;
+  }
+}
+
+// Default print styles
+// Avoid a request for a separate css file and
+// keep html-elements' styling grouped
+@media print {
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    -ms-filter: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
+
+  iframe,
+  nav {
+    display: none;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+
+  a[href]:after {
+    color: blue;
+  }
+
+  a[href^="mailto:"]:after {
+    content: "";
+  }
+
+  blockquote,
+  pre {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  img,
+  tr,
+  ul {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  h1 a:after,
+  h2 a:after,
+  h3 a:after,
+  h4 a:after,
+  h5 a:after,
+  h6 a:after {
+    display: inline-block;
+  }
+
+  h2,
+  h3,
+  h4,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+
+  @page {
+    margin: 0.8cm;
+  }
+}
