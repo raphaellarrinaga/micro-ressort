@@ -1,0 +1,67 @@
+// Layout
+
+/**
+ * Grid
+ */
+
+.l-constrain {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: rem(20);
+  padding-left: rem(20);
+
+  @include bp($bp-medium) {
+    max-width: $max-w-wide;
+  }
+}
+
+// .l-constrain {
+//   margin-left: auto;
+//   margin-right: auto;
+//   max-width: $default-wrap + $default-gutter * 2;
+//   padding-left: $default-gutter;
+//   padding-right: $default-gutter;
+
+//   // @include media($b-medium) {
+//   //   @include outer-container($l-medium);
+//   //   padding-left: 0;
+//   //   padding-right: 0;
+//   // }
+
+//   // @include media($b-big) {
+//   //   @include outer-container($l-big);
+//   // }
+
+//   // @include media($b-wide) {
+//   //   @include outer-container($l-wide);
+//   // }
+// }
+
+// .l-grid {
+//   @include mq($from: tablet) {
+//     @include flex-grid(12);
+//   }
+// }
+
+// .l-grid__column {
+//   .l-grid--cols-2 & {
+//     @include mq($from: tablet) {
+//       @include flex-col(6);
+//     }
+//   }
+//   .l-grid--cols-3 & {
+//     @include mq($from: tablet) {
+//       @include flex-col(4);
+//     }
+//   }
+//   .l-grid--cols-4 & {
+//     @include mq($from: tablet) {
+//       @include flex-col(3);
+//     }
+//   }
+//   .l-grid--cols-6 & {
+//     @include mq($from: tablet) {
+//       @include flex-col(2);
+//     }
+//   }
+// }

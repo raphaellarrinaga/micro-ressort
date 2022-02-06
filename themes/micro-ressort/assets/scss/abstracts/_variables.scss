@@ -9,6 +9,8 @@
 $white: #fefefe;
 $gray: #E3E3E3;
 $lightgray: #FAF8F5;
+$medgray: #C4C4C4;
+$darkgray: #646464;
 $black: #222;
 
 // Branding
@@ -23,12 +25,39 @@ $purple: #884EBA;
 $page-color: $white;
 $text-color: $black;
 $link-color: $orange;
+$link-hover-color: $black;
 $border: $gray;
+$heading-text-color: $black;
 
 // Fonts
 //
 $font-heading: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-body: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Define the global base font size
+// Since $px-base-font-size is defined on the <html> tag,
+// it will affect the way browsers and theme helpers calculate rem values
+// @see _html-elements.scss
+//
+$px-base-font-size: 18px !default;
+$px-base-font-size-mobile: 16px !default;
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Modular scale font-sizes
+// $modular-scale-ratio: $perfect-fourth;
+$modular-scale-ratio: 1.25;
+$modular-scale-base: 1rem;
+$font-size-normal: 1rem;
+$font-size-lg: $modular-scale-base * $modular-scale-ratio;
+$font-size-xl: $font-size-lg * $modular-scale-ratio;
+$font-size-xxl: $font-size-xl * $modular-scale-ratio;
+$font-size-xxxl: $font-size-xxl * $modular-scale-ratio;
+$font-size-xxxxl: $font-size-xxxl * $modular-scale-ratio;
+$font-size-title: $font-size-xxxxl * $modular-scale-ratio;
+$font-size-md: $modular-scale-base / $modular-scale-ratio;
+$font-size-sm: $font-size-md / $modular-scale-ratio;
+$font-size-xs: $font-size-sm / $modular-scale-ratio;
 
 // Buttons global vars
 //
@@ -42,5 +71,33 @@ $button-font-family: $font-body;
 $ease-in-cubic: cubic-bezier(.550, .055, .675, .19);
 $ease-out-quad: cubic-bezier(.25, .46, .45, .94);
 
-// Grid
-$max-width: 1180px;
+// Z-index
+$zindex: (
+  modal              : 300,
+  overlay            : 200,
+  dropdown           : 100,
+  header             : 50,
+  triangle           : 20,
+  background         : 10,
+  underground        : -1,
+);
+
+// Layout
+//
+
+// Container max-width
+$max-w-small: 100%;
+$max-w-medium: 90%;
+$max-w-big: rem(1040);
+$max-w-wide: rem(1180); // (12*80)+(11*20)
+
+// Media queries breakpoints
+$bp-small: 480px;
+$bp-medium: 769px;
+$bp-big: 1220px;
+$bp-wide: 1340px;
+
+// Flex grid
+$default-wrap: $max-w-wide;
+$default-gutter: 20px;
+$grid-columns: 12;

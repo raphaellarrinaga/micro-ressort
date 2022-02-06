@@ -16,4 +16,9 @@ Micro-ressort is dedicated to help administratively and provide loans to disadva
 
 ## Roadmap
 
-- @todo
+- css static loading
+- sass font size config
+- check sass compilation, minify, etc.
+- email obfuscation
+- (split pages templates)
+- (move content from templates in .md files)

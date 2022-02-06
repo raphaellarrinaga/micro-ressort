@@ -1,0 +1,56 @@
+// Hero
+
+.hero__title {
+  color: $white;
+  font-size: $font-size-title;
+
+  @include bp($bp-wide) {
+    @include flex-col(8);
+    @include flex-col-push(1);
+  }
+}
+
+.hero__intro {
+  color: $white;
+  font-size: $font-size-lg;
+
+  @include bp($bp-wide) {
+    @include flex-col(6);
+    @include flex-col-push(1);
+  }
+}
+
+.hero--homepage {
+  background-color: $blue;
+  color: $white;
+  padding-bottom: 3rem;
+  padding-top: rem(100);
+  position: relative;
+
+  @include section-curve($blue);
+
+  .icn-deco {
+    display: none;
+
+    @include bp($bp-wide) {
+      display: block;
+      left: calc((100vw - #{$max-w-wide})/4);
+      top: 20%;
+      position: absolute;
+      z-index: map-get($zindex, background);
+      transform: translateX(-50%);
+
+      @for $i from 1 through 5 {
+        &:nth-of-type(#{$i}) {
+          top: #{$i * 15%};
+        }
+      }
+
+      &:nth-child(even) {
+        left: auto;
+        right: calc((100vw - #{$max-w-wide})/4);
+        transform: translateX(50%);
+      }
+    }
+  }
+}

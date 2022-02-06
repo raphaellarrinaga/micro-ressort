@@ -4,9 +4,12 @@
 // Snippets of reusable CSS to develop faster and keep code readable
 //
 
-// Use drupal hidden module classes to hide text
-// .hidden, .visually-hidden, .visually-hidden.focusable, .invisible
-// @see https://www.drupal.org/node/2022859
+// Media query
+@mixin bp($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
 
 // Triangle
 @mixin triangle($color: green, $orientation: top, $width: 10px, $height: 5px) {
@@ -54,6 +57,14 @@
   }
 }
 
+// Absolute element centering
+@mixin absolute-center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // No child margin
 // Keep vrhthm consistent avoiding children margins
 // $direction : top or bottom. Default: bottom
@@ -88,18 +99,15 @@
   display: inline-block;
   font-family: $button-font-family;
   font-size: $font-size;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1;
-  // padding: rem(7px) $font-size rem(8px);
+  padding: rem(7px) $font-size rem(8px);
   text-align: center;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
-
-  // &:active {
-  // }
 
   &:disabled {
     cursor: not-allowed;

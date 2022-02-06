@@ -11,7 +11,7 @@ params:
   ]
   - [
     Roboto,
-    "400, 400i, 700, 700i"
+    "400, 400i, 500, 500i, 700, 700i"
   ]
   heading_font: "Fira Code"
   body_font: "Open Sans"

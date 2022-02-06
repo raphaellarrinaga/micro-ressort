@@ -2,14 +2,6 @@
 // Helper classes
 //
 
-.l-constrain {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $max-width;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
 // Hide for desktop
 //
 // .desktop-hidden {
@@ -52,47 +44,6 @@
 
 .button {
   @include button--default();
-}
-
-.site-section {
-  padding-bottom: 4rem;
-  padding-top: 4rem;
-  position: relative;
-  @include section-bg;
-  @include section-curve;
-}
-
-.site-section--no-curve {
-  &:after {
-    content: none;
-  }
-}
-
-.section-gray {
-  &:after {
-    background-color: $lightgray;
-  }
-
-  &:before {
-    background-color: $lightgray;
-  }
-}
-
-.section-blue {
-  color: $white;
-
-  p,
-  h1, h2, h3, h4, h5 {
-    color: $white;
-  }
-
-  &:after {
-    background-color: $blue;
-  }
-
-  &:before {
-    background-color: $blue;
-  }
 }
 
 .card {

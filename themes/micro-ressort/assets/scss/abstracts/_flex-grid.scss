@@ -1,0 +1,77 @@
+/**
+ * Flex grid.
+ */
+
+/**
+ * Flex grid.
+ *
+ * Usage:
+ * @include flex-grid();
+ */
+@mixin flex-grid($columns: $grid-columns, $gap: $default-gutter) {
+  display: flex;
+  flex-wrap: wrap;
+  // margin-left: rem(-$gap / 2);
+  // margin-right: rem(-$gap / 2);
+  justify-content: space-between;
+  min-height: 1px;
+  position: relative;
+}
+
+/**
+ * Flex col.
+ *
+ * Usage:
+ * @include flex-col(3, 12, 20);
+ */
+@mixin flex-col($number, $columns: $grid-columns, $gap: $default-gutter) {
+  position: relative;
+  // margin-left: rem($gap / 2);
+  // margin-right: rem($gap / 2);
+  min-height: 1px;
+
+  @if ($number == "auto") {
+    flex: 1 1 auto;
+    flex-basis: auto;
+    width: 100%; // Mainly for IE
+    max-width: none;
+
+  } @else {
+    // IE doesn't do box-sizing: border-box when using flex/flex--basis, so can't use it
+    // IE11 doesn't understand calc() in shorthand flex, so need to set flex-basis explicitely
+    // And if you happen to use flex-basis to size stuff, you need an explicit width or max-width as well
+    // So probably best to not set flex-basis at all
+    // eg. flex: 0 0 calc(#{100% * $number / $columns} - #{rem($gap-hor)});
+    //     flex-basis: calc(#{100% * $number / $columns} - #{rem($gap-hor)});
+    flex: 0 0 auto;
+    flex-basis: auto;
+    $total_cols: (100% * $number/$columns);
+    $total_gap: ($gap * ($columns - $number)/$columns);
+    width: calc(#{$total_cols} - #{$total_gap});
+  }
+}
+
+/**
+ * Flex col pull.
+ *
+ * Usage:
+ * @include flex-col-pull(3);
+ */
+@mixin flex-col-pull($number, $columns: $grid-columns, $gap: $default-gutter) {
+  // position: relative;
+  // left: #{100% * -$number / $columns};
+  $total_cols: (100% * $number/$columns);
+  $total_gap: ($gap * ($columns - $number)/$columns);
+  margin-right: calc(#{$total_cols} - #{$total_gap} + #{$gap});
+}
+
+/**
+ * Flex col push.
+ *
+ * Usage:
+ * @include flex-col-push(3);
+ */
+@mixin flex-col-push($number, $columns: $grid-columns, $gap: $default-gutter) {
+  position: relative;
+  left: #{100% * $number / $columns};
+}

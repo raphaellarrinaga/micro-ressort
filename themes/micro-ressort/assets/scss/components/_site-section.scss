@@ -1,0 +1,138 @@
+.site-section {
+  padding-bottom: rhythm(5);
+  padding-top: rhythm(5);
+  position: relative;
+  @include section-bg;
+  @include section-curve;
+}
+
+.site-section__header {
+  margin-bottom: rhythm(2);
+}
+
+.site-section__title {
+  font-size: $font-size-xxxxl;
+  margin: rhythm(1) 0 rhythm(3/2);
+}
+
+.site-section__subtitle {
+  color: $darkgray;
+  margin: 0;
+}
+
+.site-section--no-curve {
+  &:after {
+    content: none;
+  }
+}
+
+.section-gray {
+  &:after {
+    background-color: $lightgray;
+  }
+
+  &:before {
+    background-color: $lightgray;
+  }
+}
+
+.section-blue {
+  color: $white;
+
+  p,
+  h1, h2, h3, h4, h5 {
+    color: $white;
+  }
+
+  &:after {
+    background-color: $blue;
+  }
+
+  &:before {
+    background-color: $blue;
+  }
+}
+
+// Section How steps - frontpage
+.how-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &:after {
+    @include el(block, 70%, null);
+    @include absolute-center();
+    border-radius: 50%;
+    border: 2px solid $gray;
+    padding-bottom: 70%;
+    position: absolute;
+    z-index: map-get($zindex, underground);
+  }
+}
+
+.how-steps__item {
+  & + & {
+    margin-top: rhythm(3);
+  }
+
+  @include bp($bp-wide) {
+    @include flex-col(6);
+  }
+
+  &:nth-child(even) {
+    @include bp($bp-wide) {
+      @include flex-col-push(5);
+    }
+  }
+
+  &:last-child {
+    background-color: $lightgray;
+    border-radius: 20px;
+    padding: rhythm(3/2) rem(40);
+  }
+}
+
+.how-steps__title {
+  margin: 0;
+}
+
+.how-steps__subtitle {
+  font-size: $font-size-md;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+// Who items - frontpage
+.who-items {
+  @include bp($bp-wide) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.who-items__item {
+  @include bp($bp-wide) {
+    flex: 0 0 50%;
+    margin-bottom: rhythm(2);
+  }
+}
+
+// Site section c2a
+.site-section--c2a {
+
+}
+
+.c2a-list {
+  @include bp($bp-wide) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.c2a-list__item {
+  @include bp($bp-wide) {
+    flex: 1;
+  }
+}
