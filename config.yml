@@ -1,4 +1,5 @@
-baseURL: 'https://micro-ressort.be/'
+# baseURL: 'https://micro-ressort.be/'
+baseURL: '/'
 languageCode: 'fr'
 title: 'Micro-ressort'
 theme: "micro-ressort"
