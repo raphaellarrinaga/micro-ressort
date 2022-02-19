@@ -3,13 +3,28 @@
 // .site-navigation {}
 
 .main-menu {
-  display: flex;
-  list-style: none;
-  margin: 0 -1rem;
+  @include bp($bp-medium) {
+    display: flex;
+    list-style: none;
+    margin: 0 -1rem;
+  }
+
+  .site-footer__menu & {
+  }
+
+  .site-header__menu & {
+    display: none;
+
+    @include bp($bp-medium) {
+      display: flex;
+    }
+  }
 }
 
 .main-menu__item {
-  padding: 0 1rem;
+  @include bp($bp-medium) {
+    padding: 0 1rem;
+  }
 }
 
 .main-menu__link {

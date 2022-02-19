@@ -46,9 +46,17 @@
   @include button--default();
 }
 
+.button--arrow-right {
+  &:after {
+    @include el(inline-block, 13px, 9px);
+    background: url("/images/icn-arrow-right.svg") top left;
+    margin-left: rem(14);
+  }
+}
+
 .card {
   border-radius: 14px;
-  padding: 1rem;
+  padding: rhythm(3/2) rem(30);
 }
 
 .card--blue {
@@ -56,11 +64,11 @@
 }
 
 .card--gray {
-  @include section-bg-color($lightgray);
+  @include section-bg-color($lightorange);
 }
 
 .card--white {
-  @include section-bg-color($white, $blue);
+  @include section-bg-color($white);
 }
 
 .card--green {
@@ -73,4 +81,17 @@
 
 .card--purple {
   @include section-bg-color($purple, $white);
+}
+
+.card__title {
+  margin-top: 0;
+}
+
+.pic-frame {
+  img {
+    border: 10px solid $white;
+    display: inline-block;
+    line-height: 0;
+    box-shadow: 0 0 12px rgba($black, .06), 2px 2px 4px rgba($black, .05);
+  }
 }

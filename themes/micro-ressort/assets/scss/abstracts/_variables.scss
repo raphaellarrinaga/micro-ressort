@@ -7,11 +7,12 @@
 
 // Grays
 $white: #fefefe;
+$lightgray: #F6F6F6;
 $gray: #E3E3E3;
-$lightgray: #FAF8F5;
-$medgray: #C4C4C4;
 $darkgray: #646464;
 $black: #222;
+
+$lightorange: #FAF8F5;
 
 // Branding
 $orange: #F3722C;
@@ -78,8 +79,11 @@ $zindex: (
   dropdown           : 100,
   header             : 50,
   triangle           : 20,
-  background         : 10,
+  foreground         : 3,
+  surface            : 2,
+  background         : 1,
   underground        : -1,
+  behind             : -10,
 );
 
 // Layout
