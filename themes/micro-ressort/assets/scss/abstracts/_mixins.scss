@@ -163,7 +163,7 @@
     position: absolute;
     width: calc(100% + 170px);
     border-radius: 50%;
-    z-index: map-get($zindex, behind);
+    z-index: map-get($zindex, underground-2);
   }
 }
 
