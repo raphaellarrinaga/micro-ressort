@@ -1,6 +1,8 @@
 // Page gift
 
 .site-section--gift-process {
+  padding-bottom: 0;
+
   .site-section__title {
     @include bp($bp-medium) {
       @include flex-col-push(1);
@@ -16,14 +18,18 @@
   }
 
   .site-section__figure {
-    border-radius: rem(20);
     margin: rhythm(2) 0 0;
-    overflow: hidden;
-    line-height: 0;
+
+    @include bp($bp-medium) {
+      @include flex-col-push(1);
+      @include flex-col(9);
+    }
   }
 }
 
 .site-section--gift-support {
+  padding-bottom: 0;
+
   .site-section__title {
     @include bp($bp-medium) {
       @include flex-col-push(1);
@@ -34,7 +40,7 @@
   .site-section__content {
     @include bp($bp-medium) {
       @include flex-col-push(1);
-      @include flex-col(8);
+      @include flex-col(10);
       display: flex;
       flex-flow: row nowrap;
     }
@@ -43,15 +49,16 @@
   .site-section__text {
     background-color: $lightorange;
     border-radius: rem(20);
-    flex: 1 1 50%;
-    padding: rhythm(2) rem(40);
+    flex: 1 0 50%;
+    margin-bottom: rhythm(1);
     margin-right: rem(10);
-    text-align: center;
+    padding: rhythm(2) rem(40);
     // Vertically center text.
     display: flex;
     align-items: center;
 
-    p {
+    @include bp($bp-medium) {
+      margin-bottom: 0;
     }
 
     p {
@@ -61,10 +68,15 @@
 
   .site-section__figure {
     border-radius: rem(20);
-    flex: 1 1 50%;
+    // display: inline-block;
+    flex: 1 0 50%;
     line-height: 0;
     margin-left: rem(10);
     overflow: hidden;
+
+    img {
+      width: 100%;
+    }
   }
 }
 

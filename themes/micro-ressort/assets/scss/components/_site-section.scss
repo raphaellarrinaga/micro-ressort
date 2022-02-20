@@ -78,3 +78,71 @@
     transition: none;
   }
 }
+
+// Testimony
+.site-section--testimony {
+  .site-section__title {
+    @include bp($bp-medium) {
+      @include flex-col-push(1);
+      @include flex-col(10);
+    }
+  }
+}
+
+.testimonial {
+  @include flex-grid();
+}
+
+.testimonial__item {
+  & + & {
+    margin-top: rhythm(2);
+
+    @include bp($bp-medium) {
+      margin-top: 0;
+    }
+  }
+
+  @include bp($bp-medium) {
+    @include flex-col(6);
+  }
+
+  @include bp($bp-big) {
+    @include flex-col(4);
+    @include flex-col-push(1);
+    @include flex-col-pull(2);
+  }
+
+  &:before {
+    @include el(block, 27px, 19px);
+    background: url("/images/quote.svg") top left;
+    margin-bottom: rhythm(1);
+  }
+
+  blockquote {
+    margin: 0;
+  }
+}
+
+.testimonial__item-author {
+  color: $blue;
+
+  &:before {
+    @include el(block, 30px, 2px);
+    background-color: $blue;
+    border-radius: 2px;
+    margin-bottom: rhythm(1);
+    margin-top: rhythm(3/2);
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.site-section--figure {
+  figure {
+    @include flex-col(10);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

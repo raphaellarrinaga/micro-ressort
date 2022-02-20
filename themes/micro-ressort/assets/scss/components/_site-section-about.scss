@@ -1,1 +1,133 @@
 // page about
+
+.site-section--team {
+  .site-section__title {
+    color: $white;
+    text-align: center;
+
+    @include bp($bp-medium) {
+      @include flex-col(8);
+      margin: 0 auto rhythm(2);
+    }
+  }
+
+  .card {
+    margin-bottom: rhythm(2);
+
+    @include bp($bp-medium) {
+      @include flex-col(4);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.site-section--team-inner {
+  position: relative;
+}
+
+.team-list {
+  display: flex;
+  justify-content: center;
+
+  @include bp($bp-medium) {
+    display: block;
+  }
+}
+
+.team-list__item {
+  margin-right: rem(20);
+  text-align: center;
+
+  .team-list__item-pic {
+    transform: rotate(-4deg);
+  }
+
+  &:nth-child(even) {
+    .team-list__item-pic {
+      transform: rotate(5deg);
+    }
+  }
+
+  @include bp($bp-medium) {
+    position: absolute;
+
+    &:nth-child(1) {
+      left: 0;
+      top: 0;
+    }
+    &:nth-child(2) {
+      left: 15%;
+      top: 15%;
+    }
+    &:nth-child(3) {
+      right: 20%;
+      top: 15%;
+    }
+    &:nth-child(4) {
+      right: 0;
+      top: 0;
+    }
+    &:nth-child(5) {
+      left: 0;
+      top: 60%;
+    }
+    &:nth-child(6) {
+      left: 20%;
+      top: 70%;
+    }
+    &:nth-child(7) {
+      right: 8%;
+      top: 65%;
+    }
+  }
+
+  h3 {
+    color: $white
+  }
+}
+
+.team-list__item-pic {
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(90);
+  width: rem(78);
+}
+
+.site-section--about-c2a-items {
+  @include bp($bp-medium) {
+    @include flex-grid();
+  }
+}
+
+.site-section--about-c2a-items-item {
+  h1 {
+    font-size: $font-size-xl;
+    margin-bottom: rhythm(1);
+    margin-top: 0;
+  }
+
+  @include bp($bp-medium) {
+    @include flex-col(6);
+  }
+
+  @include bp($bp-big) {
+    @include flex-col(4);
+    @include flex-col-push(2);
+    @include flex-col-pull(1);
+    align-self: flex-start;
+  }
+
+  & + & {
+    border: 1px solid $gray;
+    margin-top: rhythm(1);
+
+    @include bp($bp-big) {
+      @include flex-col-pull(4);
+      @include flex-col(3);
+      margin-top: 0;
+    }
+  }
+}

@@ -4,6 +4,8 @@
 {{- $url_gift := "/faire-un-don" -}}
 {{- $url_help := "/demander-un-soutien" -}}
 
+{{ $image_1 := resources.GetMatch "/images/people_01b.jpg" }}
+
 <main>
   <header class="page-header page-header--about">
     <div class="l-constrain">
@@ -16,7 +18,7 @@
         <p>Nous ne demandons pas de contrepartie financière mais nous  fixons des règles strictes.</p>
       </div>
       <div class="page-header__items">
-        <section class="card card--white">
+        <section class="page-header__items-item card card--white">
           <h1 class="card__title">L’association encourage</h1>
           <ul>
             <li>Le droit à la dignité</li>
@@ -24,45 +26,105 @@
             <li>La diversité générationnelle, culturelle & sociale</li>
           </ul>
         </section>
-        <section class="card card--white">
+        <section class="page-header__items-item card card--white">
           <h1 class="card__title">Micro-ressort ne dépend pas de l’état</h1>
           <p>Micro-ressort s’inscrit dans l’idée de Muhammad Yunus, économiste bangladais, fondateur de la première institution de microcrédit en 1976 : “Créer un monde sans pauvreté”</p>
         </section>
       </div>
     </div>
   </header>
-  <section class="site-section section-purple">
+  <section class="site-section section-purple site-section--team">
     <div class="l-constrain">
       <h1 class="site-section__title">Devenir bénévole et rejoindre l’équipe</h1>
-      <div>
-        <p>Pour accompagner une personne en difficulté et t’investir avec notre équipe, pour valoriser ton temps et pour découvrir des personnes enthousiastes.</p>
-        <p>Envoyer un mail à microressort@gmail.com</p>
+      <div class="site-section--team-inner">
+        <div class="card card--white">
+          <p>Pour accompagner une personne en difficulté et t’investir avec notre équipe, pour valoriser ton temps et pour découvrir des personnes enthousiastes.</p>
+          <p>Envoyer un mail à <a href="mailto:microressort@gmail.com">microressort@gmail.com</a></p>
+        </div>
+        <ul class="team-list">
+          <li class="team-list__item">
+            <div class="team-list__item-pic">
+              {{ readFile "themes/micro-ressort/images/team-placeholder.svg" | safeHTML }}
+            </div>
+            <h3>France</h3>
+          </li>
+          <li class="team-list__item">
+            <div class="team-list__item-pic">
+              {{ readFile "themes/micro-ressort/images/team-placeholder.svg" | safeHTML }}
+            </div>
+            <h3>Phil</h3>
+          </li>
+          <li class="team-list__item">
+            <div class="team-list__item-pic">
+              {{ readFile "themes/micro-ressort/images/team-placeholder.svg" | safeHTML }}
+            </div>
+            <h3>Isa</h3>
+          </li>
+          <li class="team-list__item">
+            <div class="team-list__item-pic">
+              {{ readFile "themes/micro-ressort/images/team-placeholder.svg" | safeHTML }}
+            </div>
+            <h3>Véro</h3>
+          </li>
+          <li class="team-list__item">
+            <div class="team-list__item-pic">
+              {{ readFile "themes/micro-ressort/images/team-placeholder.svg" | safeHTML }}
+            </div>
+            <h3>Régis</h3>
+          </li>
+          <li class="team-list__item">
+            <div class="team-list__item-pic">
+              {{ readFile "themes/micro-ressort/images/team-placeholder.svg" | safeHTML }}
+            </div>
+            <h3>Francis</h3>
+          </li>
+          <li class="team-list__item">
+            <div class="team-list__item-pic">
+              {{ readFile "themes/micro-ressort/images/team-placeholder.svg" | safeHTML }}
+            </div>
+            <h3>Max</h3>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
-  <section class="site-section">
+
+  <section class="site-section site-section--testimony">
     <div class="l-constrain">
       <h1 class="site-section__title">Témoignages</h1>
-      <div>
-        <blockquote><p>Faire des projets est moteur pour moi ce qui m’a permis notamment de vivre un parcours professionnel enrichissant. Quand Micro-ressort m’a été présenté cela m’a semblé tout naturel d’y participer financièrement. Quelle aubaine de pouvoir soutenir des personnes battantes pour qu’elles puissent avancer dans leurs projets à leur tour !</p><p>N. V.M. • coopérateur investisseur</p></blockquote>
-      </div>
-      <div>
-        <blockquote><p>J’ai souhaité intégrer l’équipe de Micro-ressort car l’association apporte un soutien à des porteurs de projets. Cette notion est importante pour moi car cela démontre que l’association n’impose pas un chemin à suivre aux porteurs de projets mais les accompagne dans le leur et leur fait confiance. L’association souhaite rendre les porteurs de projets acteurs de leur vie. Elle se positionne comme un simple coup de pouce!</p><p>I. E. • volontaire</p></blockquote>
+      <div class="testimonial">
+        <div class="testimonial__item">
+          <blockquote><p>Faire des projets est moteur pour moi ce qui m’a permis notamment de vivre un parcours professionnel enrichissant. Quand Micro-ressort m’a été présenté cela m’a semblé tout naturel d’y participer financièrement. Quelle aubaine de pouvoir soutenir des personnes battantes pour qu’elles puissent avancer dans leurs projets à leur tour !</p><p class="testimonial__item-author">N. V.M. • <strong>Coopérateur investisseur</strong></p></blockquote>
+        </div>
+        <div class="testimonial__item">
+          <blockquote><p>J’ai souhaité intégrer l’équipe de Micro-ressort car l’association apporte un soutien à des porteurs de projets. Cette notion est importante pour moi car cela démontre que l’association n’impose pas un chemin à suivre aux porteurs de projets mais les accompagne dans le leur et leur fait confiance. L’association souhaite rendre les porteurs de projets acteurs de leur vie. Elle se positionne comme un simple coup de pouce!</p><p class="testimonial__item-author">I. E. • <strong>Volontaire</strong></p></blockquote>
+        </div>
       </div>
     </div>
   </section>
-  <section class="site-section">
+
+  <div class="site-section--figure">
     <div class="l-constrain">
-      <section>
-        <h1>Demandez un soutien</h1>
-        <p>Trouvons une solution ensemble. Nous vous expliquons tout.</p>
-        <p><a href="{{ $url_help }}" class="button">Demander un soutien</a></p>
-      </section>
-      <section>
-        <h1>Faire un don</h1>
-        <p>Tous les montants sont les bienvenus, vous savez ce qu’il advient de votre argent.</p>
-        <p><a href="{{ $url_gift }}" class="button">Faire un don</a></p>
-      </section>
+      <figure>
+        <img src="{{ $image_1.RelPermalink }}" alt="">
+      </figure>
+    </div>
+  </div>
+
+  <section class="site-section site-section--about-c2a">
+    <div class="l-constrain">
+      <div class="site-section--about-c2a-items">
+        <section class="site-section--about-c2a-items-item card card--gray">
+          <h1>Demandez un soutien</h1>
+          <p>Trouvons une solution ensemble. Nous vous expliquons tout.</p>
+          <a href="{{ $url_help }}" class="button">Demander un soutien</a>
+        </section>
+        <section class="site-section--about-c2a-items-item card">
+          <h1>Faire un don</h1>
+          <p>Tous les montants sont les bienvenus, vous savez ce qu’il advient de votre argent.</p>
+          <a href="{{ $url_gift }}" class="button">Faire un don</a>
+        </section>
+      </div>
     </div>
   </section>
   {{ .Content }}
