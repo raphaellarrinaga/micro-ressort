@@ -45,17 +45,19 @@
 
 .site-footer {
   border-top: 2px solid $border;
-  padding: 1.5rem 0 1rem;
+  padding: rhythm(1) 0;
   position: relative;
 
-  @include bp($bp-wide) {
-    &:before {
-      @include el(inline-block, 212px, 33px);
-      background: url("/images/footer-border.svg") top left;
-      position: absolute;
-      top: -17px;
+  &:before {
+    @include el(inline-block, 212px, 33px);
+    background: url("/images/footer-border.svg") top left;
+    position: absolute;
+    top: -17px;
+    left: 0;
+    transform: rotate(180deg);
+
+    @include bp($bp-big) {
       left: calc((100vw - #{$max-w-wide})/2);
-      transform: rotate(180deg);
     }
   }
 }

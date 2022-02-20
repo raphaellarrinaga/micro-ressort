@@ -149,6 +149,15 @@ picture {
   height: auto;
 }
 
+figure {
+  margin: 0;
+
+  img {
+    border-radius: rem(20);
+    line-height: 0;
+  }
+}
+
 ol {
   // margin: 0 0 rhythm(1);
   // padding: 0 0 0 rem(20);

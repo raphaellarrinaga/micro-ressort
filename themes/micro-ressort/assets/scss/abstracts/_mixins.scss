@@ -149,6 +149,7 @@
     left: 0;
     position: absolute;
     z-index: map-get($zindex, behind);
+    transition: none;
   }
 }
 
@@ -164,6 +165,7 @@
     width: calc(100% + 170px);
     border-radius: 50%;
     z-index: map-get($zindex, underground-2);
+    transition: none;
   }
 }
 
@@ -176,6 +178,11 @@
     p,
     h1, h2, h3, h4, h5 {
       color: $text;
+    }
+
+    a:not(.button) {
+      font-weight: 500;
+      text-decoration: underline;
     }
   }
 }

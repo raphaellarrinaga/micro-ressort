@@ -20,17 +20,6 @@
       </nav>
     </div>
 
-    <ul>
-        {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL }}">
-          {{ $text := print .Name | safeHTML }}
-          {{ $text }}
-          </a>
-        </li>
-        {{ end }}
-    </ul>
-
   </div>
 
 </footer>

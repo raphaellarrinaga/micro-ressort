@@ -28,38 +28,56 @@
     font-size: $font-size-lg;
   }
 
-  @include bp($bp-big) {
+  @include bp($bp-medium) {
     @include flex-col(6);
+  }
+
+  @include bp($bp-big) {
+    @include flex-col(5);
     @include flex-col-push(1);
   }
 }
 
 .page-header__aside {
-  h2 {
+  margin-top: rhythm(1);
+
+  @include bp($bp-medium) {
+    @include flex-col(5);
     margin-top: 0;
-    font-size: $font-size-lg;
   }
 
   @include bp($bp-big) {
     @include flex-col(4);
     @include flex-col-pull(1);
   }
+
+  h2 {
+    margin-top: 0;
+    font-size: $font-size-lg;
+  }
 }
 
 .page-header--support {
-  padding-bottom: rem(100);
-  padding-top: rem(200);
+  background: url("/images/wave-1.svg") no-repeat center center;
+  padding-bottom: rhythm(2);
+  padding-top: rem(100);
+  @include section-curve($white);
+
+  @include bp($bp-medium) {
+    padding-bottom: rem(100);
+    padding-top: rem(200);
+  }
 }
 
 .page-header--gift {
-  background-color: $lightorange;
+  background: $lightorange url("/images/wave-2.svg") no-repeat center center;
   padding-bottom: rem(100);
   padding-top: rem(200);
   @include section-curve($lightorange);
 }
 
 .page-header--about {
-  background-color: $lightgray;
+  background: $lightgray url("/images/wave-2.svg") no-repeat center center;
   padding-bottom: rem(100);
   padding-top: rem(200);
   @include section-curve($lightgray);
@@ -69,7 +87,6 @@
       display: flex;
 
       > * {
-        // flex: 1 1 0;
         @include flex-col(4);
         @include flex-col-push(1);
       }

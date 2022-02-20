@@ -51,6 +51,7 @@
     width: rem(240);
     // First-child.
     transform: translateY(25%) rotate(13deg);
+    transition: none;
 
     svg {
       position: absolute;
@@ -91,6 +92,7 @@
   padding-bottom: rhythm(4);
   padding-top: rem(100);
   position: relative;
+  transition: none;
 
   @include section-curve($blue);
 
