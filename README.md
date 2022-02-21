@@ -17,4 +17,4 @@ Micro-ressort is dedicated to help administratively and provide loans to disadva
 ## Roadmap
 
 - Review pictures
-- Review texts
+- RGPD for the survey

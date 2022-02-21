@@ -5,6 +5,8 @@ title: 'Micro-ressort'
 theme: "micro-ressort"
 relativeURLS: true
 params:
+  description: Sollicitez un appui financier et social pour votre projet de vie
+  url: https://micro-ressort.be/
   google_fonts:
   - [
     Dosis,
@@ -16,6 +18,3 @@ params:
   ]
   heading_font: "Fira Code"
   body_font: "Open Sans"
-params:
-  description: Sollicite un appui financier et social pour ton projet de vie!
-  url: https://micro-ressort.be/

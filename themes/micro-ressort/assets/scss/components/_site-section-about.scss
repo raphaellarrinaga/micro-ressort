@@ -24,6 +24,12 @@
 
 .site-section--team-inner {
   position: relative;
+
+  .card {
+    p {
+      color: $black;
+    }
+  }
 }
 
 .team-list {
@@ -69,14 +75,10 @@
       top: 0;
     }
     &:nth-child(5) {
-      left: 0;
-      top: 60%;
+      left: 5%;
+      top: 65%;
     }
     &:nth-child(6) {
-      left: 20%;
-      top: 70%;
-    }
-    &:nth-child(7) {
       right: 8%;
       top: 65%;
     }
