@@ -16,3 +16,6 @@ params:
   ]
   heading_font: "Fira Code"
   body_font: "Open Sans"
+params:
+  description: Sollicite un appui financier et social pour ton projet de vie!
+  url: https://micro-ressort.be/

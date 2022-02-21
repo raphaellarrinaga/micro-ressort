@@ -1,13 +1,29 @@
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-  {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ $title := print .Site.Title " | " .Title }}
   {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
   <title>{{ $title }}</title>
+  {{ $description := print .Site.Params.description }}
+  {{ if .Params.description }}{{ $description := print .Params.description }}{{ end }}
+  <meta name="description" content="{{ $description }}">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta property="og:type" content="website">
+  {{ $imageSocialCover := resources.GetMatch "/images/social_cover.png" }}
+  <meta property="og:image" content="{{ $imageSocialCover.RelPermalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:url" content="{{ .Site.Params.url }}">
+  {{ with .OutputFormats.Get "rss" -}}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
   {{ partial "site-style.html" . }}
   {{ partial "google-fonts" . }}
+  {{ $imageAppleTouch := resources.GetMatch "/images/apple-touch-icon.png" }}
+  {{ $imageFavicon16 := resources.GetMatch "/images/favicon-16x16.png" }}
+  {{ $imageFavicon32 := resources.GetMatch "/images/favicon-32x32.png" }}
+  <link href="{{ $imageSocialCover.RelPermalink }}" rel="apple-touch-icon" sizes="180x180">
+  <link href="{{ $imageFavicon16.RelPermalink }}" rel="icon" type="image/png" sizes="16x16">
+  <link href="{{ $imageFavicon32.RelPermalink }}" rel="icon" type="image/png" sizes="32x32">
 </head>
