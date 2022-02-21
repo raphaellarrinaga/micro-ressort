@@ -10,5 +10,23 @@
 
       {{- partial "footer.html" . -}}
     </div>
+    <script defer language="javascript" type="text/javascript">
+      var root = document.getElementsByTagName( 'html' )[0];
+      root.setAttribute( 'class', 'js' );
+      var toggle = document.querySelector('.main-menu-toggle');
+      var menu = document.querySelector('.site-header__menu .main-menu');
+      var menuItems = menu.querySelector('.main-menu__link');
+
+      toggle.addEventListener('click', function(){
+        if (menu.classList.contains('is-active')) {
+          this.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('is-active');
+        } else {
+          menu.classList.add('is-active');
+          this.setAttribute('aria-expanded', 'true');
+          //menuItems[0].focus();
+        }
+      });
+    </script>
   </body>
 </html>

@@ -5,9 +5,16 @@
 //
 
 // Media query
-@mixin bp($breakpoint) {
-  @media screen and (min-width: $breakpoint) {
-    @content;
+@mixin bp($breakpoint, $max: false) {
+  @if $max {
+    @media screen and (max-width: #{$breakpoint - 1px}) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
   }
 }
 

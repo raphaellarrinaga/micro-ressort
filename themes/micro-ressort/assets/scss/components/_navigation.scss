@@ -2,31 +2,105 @@
 
 // .site-navigation {}
 
+// .site-header__menu {}
+
 .main-menu {
   @include bp($bp-medium) {
     display: flex;
     list-style: none;
-    margin: 0 -1rem;
-  }
-
-  .site-footer__menu & {
-  }
-
-  .site-header__menu & {
-    display: none;
-
-    @include bp($bp-medium) {
-      display: flex;
-    }
+    margin: 0 rem(-20);
   }
 }
 
 .main-menu__item {
   @include bp($bp-medium) {
-    padding: 0 1rem;
+    padding: 0 rem(20);
   }
 }
 
 .main-menu__link {
   color: $text-color;
+
+  &:hover {
+    color: $orange;
+  }
+}
+
+// Mobile menu.
+
+.main-menu-toggle {
+  position: absolute;
+  right: rem(20);
+  top: rem(36);
+  display: none;
+
+  @include bp($bp-medium) {
+    display: none;
+  }
+}
+
+.js {
+  .main-menu-toggle {
+    display: block;
+
+    @include bp($bp-medium) {
+      display: none;
+    }
+  }
+
+  .site-header__menu {
+    .main-menu {
+      display: none;
+
+      @include bp($bp-medium) {
+        display: flex;
+      }
+    }
+  }
+}
+
+.site-header__menu {
+  .main-menu__link {
+    display: block;
+
+    &.is-active {
+      color: $orange;
+      position: relative;
+
+      &:after {
+        @include el(block, 4px, 4px);
+        border-radius: 2px;
+        background-color: $orange;
+        right: 100%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-8px, -50%);
+      }
+    }
+  }
+
+  .main-menu {
+    @include bp($bp-medium, max-width) {
+      background-color: $lightgray;
+      border-radius: rem(5);
+      padding-bottom: rem(20);
+      padding-top: rem(20);
+      box-shadow: 0 0 12px rgba($black, .06), 1px 1px 2px rgba($black, .1);
+    }
+
+    &.is-active {
+      display: block;
+    }
+
+    .main-menu__link {
+      @include bp($bp-medium, max-width) {
+        color: $blue;
+        padding: rem(8) rem(20);
+
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
 }

@@ -54,6 +54,21 @@
   }
 }
 
+.button--toggle {
+  background-color: $white;
+  border-radius: rem(3);
+  color: $blue;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 0 0 1px $blue;
+
+  &:focus {
+    background-color: $blue;
+    color: $white;
+    box-shadow: 0 0 0 1px $blue;
+  }
+}
+
 .card {
   border-radius: 14px;
   padding: rhythm(3/2) rem(30);
