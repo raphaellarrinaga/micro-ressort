@@ -10,7 +10,7 @@
   @include section-bg;
   @include section-curve;
 
-  @include bp($bp-wide) {
+  @include bp($bp-medium) {
     padding-bottom: rhythm(5);
     padding-top: rhythm(5);
   }
@@ -21,7 +21,7 @@
 }
 
 .site-section__title {
-  font-size: $font-size-xxxl;
+  font-size: $font-size-xxl;
   margin: rhythm(1) 0 rhythm(3/2);
 
   @include bp($bp-medium) {
@@ -31,7 +31,12 @@
 
 .site-section__subtitle {
   color: $darkgray;
+  font-size: $font-size-lg;
   margin: 0;
+
+  @include bp($bp-medium) {
+    font-size: $font-size-xl;
+  }
 }
 
 .site-section--no-curve {
@@ -141,8 +146,10 @@
 
 .site-section--figure {
   figure {
-    @include flex-col(10);
-    margin-left: auto;
-    margin-right: auto;
+    @include bp($bp-medium) {
+      @include flex-col(10);
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

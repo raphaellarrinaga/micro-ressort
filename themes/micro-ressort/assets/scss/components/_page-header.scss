@@ -12,9 +12,14 @@
 }
 
 .page-header__title {
-  font-size: $font-size-xxxxl;
-  margin-bottom: rhythm(2);
+  font-size: $font-size-xxxl;
+  margin-bottom: rhythm(1);
   margin-top: 0;
+
+  @include bp($bp-medium) {
+    font-size: $font-size-xxxxl;
+    margin-bottom: rhythm(2);
+  }
 
   @include bp($bp-big) {
     @include flex-col(8);
@@ -23,11 +28,6 @@
 }
 
 .page-header__intro {
-  p {
-    color: $darkgray;
-    font-size: $font-size-lg;
-  }
-
   @include bp($bp-medium) {
     @include flex-col(8);
   }
@@ -37,8 +37,22 @@
     @include flex-col-push(1);
   }
 
-  .page-header--aside & {
-    @include bp($bp-big) {
+  p {
+    color: $darkgray;
+    font-size: $font-size-lg;
+  }
+
+}
+
+.page-header__inner {
+  @include bp($bp-medium) {
+    @include flex-grid();
+  }
+}
+
+.page-header--has-aside {
+  .page-header__intro {
+    @include bp($bp-medium) {
       @include flex-col(5);
     }
   }
@@ -77,21 +91,30 @@
 
 .page-header--gift {
   background: $lightorange url("/images/wave-2.svg") no-repeat center center;
-  padding-bottom: rem(100);
-  padding-top: rem(200);
+  padding-bottom: rem(40);
+  padding-top: rem(100);
   @include section-curve($lightorange);
+
+  @include bp($bp-medium) {
+    padding-bottom: rem(100);
+    padding-top: rem(200);
+  }
 }
 
 .page-header--about {
   background: $lightgray url("/images/wave-2.svg") no-repeat center center;
-  padding-bottom: rem(100);
-  padding-top: rem(200);
   @include section-curve($lightgray);
+  padding-bottom: rem(40);
+  padding-top: rem(100);
+
+  @include bp($bp-medium) {
+    padding-bottom: rem(100);
+    padding-top: rem(200);
+  }
 }
 
 .page-header__items {
   @include bp($bp-medium) {
-    // display: flex;
     @include flex-grid();
   }
 }

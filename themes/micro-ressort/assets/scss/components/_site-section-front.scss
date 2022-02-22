@@ -92,9 +92,13 @@
 }
 
 .how-steps__title {
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   margin: rhythm(1/5) 0 rhythm(2/3);
   padding-left: rem(60);
+
+  @include bp($bp-medium) {
+    font-size: $font-size-xl;
+  }
 }
 
 .how-steps__subtitle {
@@ -107,12 +111,7 @@
 
 // Who items - frontpage
 .site-section--who-items {
-  // padding-bottom: rhythm(10);
   position: relative;
-
-  @include bp($bp-medium) {
-    // padding-bottom: rhythm(5);
-  }
 
   .site-section__header {
     @include bp($bp-medium) {

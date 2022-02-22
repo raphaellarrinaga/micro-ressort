@@ -12,6 +12,12 @@
   width: 100%;
   z-index: map-get($zindex, header);
 
+  .logo {
+    @include bp($bp-medium, max-width) {
+      max-width: rem(160);
+    }
+  }
+
   &.is-home {
     .logo {
       path {
@@ -67,5 +73,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .main-menu__item {
+    @include bp($bp-medium, max-width) {
+      &:not(:last-child) {
+        margin-bottom: rhythm(1/3);
+      }
+    }
   }
 }

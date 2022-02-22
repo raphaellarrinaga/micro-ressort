@@ -8,6 +8,12 @@
   *:last-child {
     margin-bottom: 0;
   }
+
+  h2 {
+    &:not(:first-child) {
+      margin-top: rhythm(1);
+    }
+  }
 }
 
 .site-section--help-who {
@@ -89,7 +95,9 @@
   }
 
   &:nth-child(even) {
-    transform: translateY(rhythm(1));
+    @include bp($bp-medium) {
+      transform: translateY(rhythm(1));
+    }
   }
 
   @include bp($bp-medium) {

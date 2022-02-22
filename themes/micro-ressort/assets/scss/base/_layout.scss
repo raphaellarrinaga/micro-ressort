@@ -11,7 +11,13 @@
   padding-left: rem(20);
 
   @include bp($bp-medium) {
-    max-width: $max-w-wide;
+    width: $max-w-medium;
+  }
+  @include bp($bp-big) {
+    width: $max-w-big;
+  }
+  @include bp($bp-wide) {
+    width: $max-w-wide;
   }
 }
 

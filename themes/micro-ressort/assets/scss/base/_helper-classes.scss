@@ -71,7 +71,11 @@
 
 .card {
   border-radius: 14px;
-  padding: rhythm(3/2) rem(30);
+  padding: rhythm(1) rem(20);
+
+  @include bp($bp-medium) {
+    padding: rhythm(3/2) rem(30);
+  }
 }
 
 .card--blue {

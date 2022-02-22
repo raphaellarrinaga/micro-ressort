@@ -34,6 +34,7 @@
 
 .team-list {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
 
   @include bp($bp-medium) {
