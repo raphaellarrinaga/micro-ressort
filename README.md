@@ -16,4 +16,5 @@ Micro-ressort is dedicated to help administratively and provide loans to disadva
 
 ## Roadmap
 
-- @todo
+- Change images (+credits)
+- Add G. Analytics ? (cookies)
