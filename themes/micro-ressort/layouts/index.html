@@ -2,7 +2,7 @@
 
 {{- $url_about := "/a-propos" -}}
 {{- $url_gift := "/faire-un-don" -}}
-{{- $url_help := "/demander-un-soutien" -}}
+{{- $url_help := "/demander-un-appui" -}}
 
 {{ $image_1 := resources.GetMatch "/images/people_01.jpg" }}
 {{ $image_2 := resources.GetMatch "/images/people_02.jpg" }}
@@ -53,7 +53,7 @@
             <p class="how-steps__subtitle">Roberto est Porteur de projet</p>
             <h3 class="how-steps__title">Il demande un appui à Micro-ressort</h3>
           </div>
-          <p>Il contacte Micro-ressort pour demander un soutien financier. Il a un besoin d’argent urgent pour honorer une dette imprévue et il a peur de devoir arrêter ses études pour faire face à celle-ci.</p>
+          <p>Il contacte Micro-ressort pour demander un appui financier. Il a un besoin d’argent urgent pour honorer une dette imprévue et il a peur de devoir arrêter ses études pour faire face à celle-ci.</p>
           <figure class="how-steps__image pic-frame">
             <img src="{{ $image_6.RelPermalink }}" alt="">
           </figure>
@@ -104,7 +104,7 @@
         </li>
         <li class="who-items__item card card--blue">
           {{ readFile "themes/micro-ressort/images/icn-targets.svg" | safeHTML }}
-          <h3 class="who-items__item-title">Micro-ressort soutient financièrement et donne des pistes</h3>
+          <h3 class="who-items__item-title">Micro-ressort apporte un appui financier et donne des pistes</h3>
           <p>Pour recevoir un appui financier, pour une redirection vers des services pertinents, pour un accompagnement jusqu’à l’aboutissement d’un projet.</p>
         </li>
       </ul>
@@ -118,9 +118,9 @@
     <div class="l-constrain">
       <div class="c2a-list">
         <article class="c2a-list__item card card--gray">
-          <h1 class="c2a-list__item-title">Demander un soutien</h1>
+          <h1 class="c2a-list__item-title">Demander un appui</h1>
           <p>Trouvons une solution ensemble. Nous vous expliquons tout.</p>
-          <a href="{{ $url_help }}" class="button">Demander un soutien</a>
+          <a href="{{ $url_help }}" class="button">Demander un appui</a>
         </article>
         <article class="c2a-list__item card card--white">
           <h1 class="c2a-list__item-title">Faire un don</h1>
