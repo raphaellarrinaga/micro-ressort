@@ -4,6 +4,7 @@ languageCode: 'fr'
 title: 'Micro-ressort'
 theme: "micro-ressort"
 relativeURLS: true
+googleAnalytics: "G-LTV96GR4EE"
 params:
   description: Sollicitez un appui financier et social pour votre projet de vie
   url: https://micro-ressort.be/

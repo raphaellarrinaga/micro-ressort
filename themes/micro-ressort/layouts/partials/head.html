@@ -20,6 +20,9 @@
   {{ end -}}
   {{ partial "site-style.html" . }}
   {{ partial "google-fonts" . }}
+  {{/* https://gideonwolfe.com/posts/sysadmin/hugo/hugogoogleanalytics/ */}}
+  {{ template "_internal/google_analytics.html" . }}
+  {{ template "_internal/google_analytics_async.html" . }}
   {{ $imageAppleTouch := resources.GetMatch "/images/apple-touch-icon.png" }}
   {{ $imageFavicon16 := resources.GetMatch "/images/favicon-16x16.png" }}
   {{ $imageFavicon32 := resources.GetMatch "/images/favicon-32x32.png" }}
